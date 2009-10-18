@@ -1,0 +1,14 @@
+build
+*.swp
+
+*.mode1
+*.mode1v3
+*.mode2
+*.pbxuser
+*.perspective
+*.perspectivev3
+
+*~.nib
+
+.DS_Store
+Icon?
