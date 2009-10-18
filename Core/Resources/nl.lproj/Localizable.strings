@@ -1,0 +1,131 @@
+﻿/* No comment provided by engineer. */
+" New notifications will be sticky." = "Nieuwe meldingen zullen sticky zijn.";
+
+/* No comment provided by engineer. */
+"A Growl update is available" = "Er is een nieuwe versie van Growl beschikbaar";
+
+/* No comment provided by engineer. */
+"A newer version of Growl is available online. Click here to download it now." = "Er is een nieuwere versie van Growl beschikbaar. Klik hier om te downloaden.";
+
+/* No comment provided by engineer. */
+"A newer version of Growl is available online. Would you like to download it now?" = "Er is een nieuwere versie van Growl beschikbaar on-line. Wilt u deze u downloaden?";
+
+/* No comment provided by engineer. */
+"Are you sure you want to remove %@?" = "Weet u zeker dat u %@ wilt verwijderen?";
+
+/* No comment provided by engineer. */
+"Browse menu item title" = "Blader door titel menu-onderdeel";
+
+/* No comment provided by engineer. */
+"Cancel" = "Annuleer";
+
+/* No comment provided by engineer. */
+"Default" = "Standaard";
+
+/* No comment provided by engineer. */
+"Growl could not bind the socket" = "Growl kon de socket niet binden";
+
+/* No comment provided by engineer. */
+"Growl could not create a socket" = "Growl kon geen socket creëren";
+
+/* No comment provided by engineer. */
+"Growl is running." = "Growl is gestart.";
+
+/* No comment provided by engineer. */
+"Growl is stopped." = "Growl is gestopt.";
+
+/* No comment provided by engineer. */
+"Growl update available" = "Nieuwe versie Growl beschikbaar";
+
+/* No comment provided by engineer. */
+"Growl was unable to bind the socket for Network notifications. Check to make sure that there aren't any other applications already using the port." = "Growl kon de socket voor netwerkmeldingen niet binden. Controleer of deze poort niet al door andere programma's wordt gebruikt.";
+
+/* No comment provided by engineer. */
+"Growl was unable to create the socket for Network notifications." = "Growl kon geen socket voor netwerkmeldingen creëren.";
+
+/* No comment provided by engineer. */
+"Inform %@ when a notification is clicked" = "Informeer %@ als er op een melding is geklikt";
+
+/* No comment provided by engineer. */
+"Launching Growl..." = "Bezig met starten van Growl...";
+
+/* No comment provided by engineer. */
+"Mac OS X 10.3 \"Panther\" or greater is required." = "Mac OS X 10.3 \"Panther\" of hoger is vereist.";
+
+/* No comment provided by engineer. */
+"No" = "Nee";
+
+/* No comment provided by engineer. */
+"No activity for more than %d seconds." = "Geen activiteit sinds meer dan %d seconden";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Plugin '%@' has been installed successfully. Do you want to configure it now?" = "Plug-in '%@' is succesvol geïnstalleerd. Wilt u deze nu instellen?";
+
+/* No comment provided by engineer. */
+"Plugin '%@' is already installed, do you want to overwrite it?" = "Plug-in '%@' is al geïnstalleerd. Wilt u deze overschrijven?";
+
+/* No comment provided by engineer. */
+"Plugin already exists" = "Plug-in bestaat al";
+
+/* No comment provided by engineer. */
+"Plugin installed" = "Plug-in geïnstalleerd";
+
+/* No comment provided by engineer. */
+"Plugin not installed" = "Plug-in niet geïnstalleerd";
+
+/* Title of the Preview notification shown to demonstrate Growl displays */
+"Preview" = "Voorvertoning";
+
+/* Quit button title */
+"Quit" = "Stop";
+
+/* Button title for removing something */
+"Remove" = "Verwijder";
+
+/* No comment provided by engineer. */
+"Start Growl" = "Start Growl";
+
+/* No comment provided by engineer. */
+"Stop Growl" = "Stop Growl";
+
+/* Title for the dialogue shown if attempting to run Growl on 10.2 or earlier */
+"System requirements not met" = "Niet de juiste systeemvereisten";
+
+/* No comment provided by engineer. */
+"Terminating Growl..." = "Bezig met afsluiten Growl...";
+
+/* No comment provided by engineer. */
+"There was an error while installing the plugin '%@'." = "Er is een fout opgetreden bij het installeren van de plug-in '%@'.";
+
+/* Preview message shown when clicking Preview in the system preferences pane. %@ becomes the name of the display style being used. */
+"This is a preview of the %@ display" = "Dit is een voorvertoning van de %@ weergave";
+
+/* No comment provided by engineer. */
+"This will remove all Growl settings for %@." = "Hiermee verwijdert u alle Growl-instellingen voor %@.";
+
+/* No comment provided by engineer. */
+"Update Available" = "Update beschikbaar";
+
+/* Button title */
+"Upgrade Mac OS X..." = "Upgrade Mac OS X...";
+
+/* No comment provided by engineer. */
+"User activity detected. New notifications will not be sticky by default." = "Activiteit van gebruiker gedetecteerd. Nieuwe meldingen zullen niet standaard sticky zijn.";
+
+/* No comment provided by engineer. */
+"User returned" = "Gebruiker teruggekeerd";
+
+/* No comment provided by engineer. */
+"User went idle" = "Gebruiker is idle";
+
+/* No comment provided by engineer. */
+"Yes" = "Ja";
+
+/* No comment provided by engineer. */
+"You are no longer considered idle by Growl" = "U wordt niet langer idle beschouwd door Growl";
+
+/* No comment provided by engineer. */
+"You are now considered idle by Growl" = "U wordt nu idle beschouwd door Growl";

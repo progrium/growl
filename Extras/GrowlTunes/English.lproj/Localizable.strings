@@ -1,0 +1,60 @@
+﻿/* This is the format used for a normal song. In the order shown in English, the parameters are length, rating, artist, composer, album, and genre */
+"%@ — %@\n%@ (Composed by %@)\n%@\n%@" = "%1$@ — %2$@\n%3$@ (Composed by %4$@)\n%5$@\n%6$@";
+
+/* This is the format used for a normal song. In the order shown in English, the parameters are length, rating, artist, album, and genre */
+"%@ — %@\n%@\n%@\n%@" = "%1$@ — %2$@\n%3$@\n%4$@\n%5$@";
+
+/* Tooltip for 'start polling' */
+"Begins asking iTunes for track information. You will then start receiving Growl notifications from GrowlTunes." = "Begins asking iTunes for track information. You will then start receiving Growl notifications from GrowlTunes.";
+
+/* No comment provided by engineer. */
+"Changed Tracks" = "Changed Tracks";
+
+/* No comment provided by engineer. */
+"GrowlTunes’ control status item." = "GrowlTunes’ control status item.";
+
+/* No comment provided by engineer. */
+"Launch iTunes" = "Launch iTunes";
+
+/* No comment provided by engineer. */
+"Online Help" = "Online Help";
+
+/* Online help's tooltip */
+"Opens the webpage for GrowlTunes help on the Growl website in your selected browser." = "Opens the webpage for GrowlTunes help on the Growl website in your selected browser.";
+
+/* No comment provided by engineer. */
+"Quit Both" = "Quit Both";
+
+/* No comment provided by engineer. */
+"Quit GrowlTunes" = "Quit GrowlTunes";
+
+/* No comment provided by engineer. */
+"Quit iTunes" = "Quit iTunes";
+
+/* No comment provided by engineer. */
+"Quits both iTunes and GrowlTunes" = "Quits both iTunes and GrowlTunes";
+
+/* No comment provided by engineer. */
+"Rating" = "Rating";
+
+/* No comment provided by engineer. */
+"Recently Played Tunes" = "Recently Played Tunes";
+
+/* No comment provided by engineer. */
+"Start Polling" = "Start Polling";
+
+/* No comment provided by engineer. */
+"Started Playing" = "Started Playing";
+
+/* No comment provided by engineer. */
+"Stop Polling" = "Stop Polling";
+
+/* Tooltip for 'stop polling' */
+"Stops GrowlTunes from asking iTunes for track information. You will then no longer receive Growl notifications from GrowlTunes." = "Stops GrowlTunes from asking iTunes for track information. You will then no longer receive Growl notifications from GrowlTunes.";
+
+/* Tooltip for recent tracks */
+"Tells iTunes to play this track again." = "Tells iTunes to play this track again.";
+
+/* Toggle polling tooltip */
+"Turns on or off GrowlTunes' periodic asking of iTunes for track information." = "Turns on or off GrowlTunes' periodic asking of iTunes for track information.";
+

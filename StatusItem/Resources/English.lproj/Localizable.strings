@@ -1,0 +1,45 @@
+﻿/* No comment provided by engineer. */
+"Default display" = "Default display";
+
+/* No comment provided by engineer. */
+"Default display changed to %@" = "Default display changed to %@";
+
+/* Notification posted by GrowlMenu when the display style changes */
+"Display changed" = "Display changed";
+
+/* No comment provided by engineer. */
+"Don't show notifications, but still log them" = "Don't show notifications, but still log them";
+
+/* No comment provided by engineer. */
+"Hide Status Item" = "Hide Status Item";
+
+/* No comment provided by engineer. */
+"Hide this status item" = "Hide this status item";
+
+/* No comment provided by engineer. */
+"Log only, don't display" = "Log only, don't display";
+
+/* No comment provided by engineer. */
+"Open Growl Preferences..." = "Open Growl Preferences...";
+
+/* No comment provided by engineer. */
+"Open the Growl preference pane" = "Open the Growl preference pane";
+
+/* No comment provided by engineer. */
+"Restart Growl" = "Restart Growl";
+
+/* No comment provided by engineer. */
+"Set the default display style" = "Set the default display style";
+
+/* No comment provided by engineer. */
+"Start Growl" = "Start Growl";
+
+/* No comment provided by engineer. */
+"Sticky Notifications" = "Sticky Notifications";
+
+/* No comment provided by engineer. */
+"Stop Growl" = "Stop Growl";
+
+/* No comment provided by engineer. */
+"Toggles the sticky notification state" = "Toggles the sticky notification state";
+
