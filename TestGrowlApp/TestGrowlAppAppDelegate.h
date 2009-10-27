@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <Growl/Growl.h>
 
-@interface TestGrowlAppAppDelegate : NSObject <NSApplicationDelegate, GrowlApplicationBridgeDelegate, NSStreamDelegate> {
+@interface TestGrowlAppAppDelegate : NSObject < GrowlApplicationBridgeDelegate> {
     NSWindow *window;
 	NSURLConnection *notifyConn;
 	NSURLConnection *iconConn;

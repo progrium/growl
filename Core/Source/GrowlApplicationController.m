@@ -1032,6 +1032,7 @@ static void checkVersion(CFRunLoopTimerRef timer, void *context) {
 
 //Post a notification when we are done launching so the application bridge can inform participating applications
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
+	NSLog(@"amanda one");
 #pragma unused(aNotification)
 	[[NSDistributedNotificationCenter defaultCenter] postNotificationName:GROWL_IS_READY
 	                                                               object:nil

@@ -30,7 +30,7 @@
 	NSString *growlPath = [[myBundle privateFrameworksPath]
 						   stringByAppendingPathComponent:@"Growl.framework"];
 	NSBundle *growlBundle = [NSBundle bundleWithPath:growlPath];
-	if (growlBundle && [growlBundle load]) {
+	if ([growlBundle load]) {
 		// Register ourselves as a Growl delegate
 		[GrowlApplicationBridge setGrowlDelegate:self];
 		NSLog(@"loaded, bitches");
@@ -52,10 +52,15 @@
                                       encoding:NSASCIIStringEncoding
                                       error:&error];
 	NSLog(@"contents of file: %@", stringFromFileAtPath);
+
+	if([stringFromFileAtPath length] == 0)
+	{
+		NSLog(@"the file at path %@ is empty", filepath);
+		return;
+	}
+	
 	NSString *urlString = [stringFromFileAtPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	
-	
-	//NSURL *url = [NSURL URLWithString:@"http://api.notify.io/listen/bb46488d2c90d51f366cafc776e2b3ad"];
 	
 	NSURL *url = [NSURL URLWithString:urlString];
 	[stringFromFileAtPath release];
