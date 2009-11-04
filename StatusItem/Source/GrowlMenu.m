@@ -47,7 +47,6 @@ int main(void) {
 @implementation GrowlMenu
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
-		NSLog(@"amanda two");
 #pragma unused(aNotification)
 	pid = getpid();
 	preferences = [GrowlPreferencesController sharedController];

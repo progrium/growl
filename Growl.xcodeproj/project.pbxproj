@@ -184,6 +184,14 @@
 		83282747073A6C110044A959 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83282746073A6C110044A959 /* PreferencePanes.framework */; };
 		8363F463098A1B5C000AAC48 /* AboveTheNight.growlStyle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8363F456098A1B5C000AAC48 /* AboveTheNight.growlStyle */; };
 		8D202CED0486D31800D8A456 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		90FD50171098044A0051E460 /* GrowlNotifyioPathway.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FD50161098044A0051E460 /* GrowlNotifyioPathway.m */; };
+		90FD50A910997DCA0051E460 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FD509B10997DC90051E460 /* NSCharacterSet_Extensions.m */; };
+		90FD50AA10997DCA0051E460 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FD509D10997DC90051E460 /* CDataScanner_Extensions.m */; };
+		90FD50AB10997DCA0051E460 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FD509F10997DC90051E460 /* NSDictionary_JSONExtensions.m */; };
+		90FD50AC10997DCA0051E460 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FD50A210997DC90051E460 /* CJSONScanner.m */; };
+		90FD50AD10997DCA0051E460 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FD50A410997DC90051E460 /* CJSONSerializer.m */; };
+		90FD50AE10997DCA0051E460 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FD50A610997DC90051E460 /* CJSONDeserializer.m */; };
+		90FD50AF10997DCA0051E460 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 90FD50A810997DC90051E460 /* CDataScanner.m */; };
 		932D6BE6094BA0FD00B64D0F /* GrowlShrinkingWindowTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 932D6BE4094BA0FD00B64D0F /* GrowlShrinkingWindowTransition.m */; };
 		932D6CD7094BB83B00B64D0F /* GrowlScaleWindowTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 932D6CD5094BB83B00B64D0F /* GrowlScaleWindowTransition.m */; };
 		934EBCB80931F529002C378F /* GrowlApplicationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F60EB6078E1D3E00CECA86 /* GrowlApplicationBridge.m */; };
@@ -913,6 +921,22 @@
 		8363F456098A1B5C000AAC48 /* AboveTheNight.growlStyle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AboveTheNight.growlStyle; path = Core/Resources/AboveTheNight.growlStyle; sourceTree = "<group>"; };
 		8D202CF70486D31800D8A456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Core/Resources/Info.plist; sourceTree = "<group>"; };
 		8D202CF80486D31800D8A456 /* Growl.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Growl.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		90FD50151098044A0051E460 /* GrowlNotifyioPathway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlNotifyioPathway.h; sourceTree = "<group>"; };
+		90FD50161098044A0051E460 /* GrowlNotifyioPathway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowlNotifyioPathway.m; sourceTree = "<group>"; };
+		90FD509A10997DC90051E460 /* NSCharacterSet_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCharacterSet_Extensions.h; sourceTree = "<group>"; };
+		90FD509B10997DC90051E460 /* NSCharacterSet_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCharacterSet_Extensions.m; sourceTree = "<group>"; };
+		90FD509C10997DC90051E460 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		90FD509D10997DC90051E460 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		90FD509E10997DC90051E460 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		90FD509F10997DC90051E460 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		90FD50A110997DC90051E460 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		90FD50A210997DC90051E460 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		90FD50A310997DC90051E460 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		90FD50A410997DC90051E460 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		90FD50A510997DC90051E460 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		90FD50A610997DC90051E460 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		90FD50A710997DC90051E460 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		90FD50A810997DC90051E460 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
 		932D6BE3094BA0FD00B64D0F /* GrowlShrinkingWindowTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlShrinkingWindowTransition.h; sourceTree = "<group>"; };
 		932D6BE4094BA0FD00B64D0F /* GrowlShrinkingWindowTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowlShrinkingWindowTransition.m; sourceTree = "<group>"; };
 		932D6CD4094BB83B00B64D0F /* GrowlScaleWindowTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlScaleWindowTransition.h; sourceTree = "<group>"; };
@@ -1357,6 +1381,7 @@
 		070B86340A08814D0093150E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				90FD509810997DC90051E460 /* TouchJSON */,
 				950568E30812C2960096EC5C /* GrowlLog.h */,
 				950568E40812C2960096EC5C /* GrowlLog.m */,
 				95B2B27B08745BA100EA34BF /* GrowlUDPUtils.h */,
@@ -1816,6 +1841,44 @@
 			name = AppleScript;
 			sourceTree = "<group>";
 		};
+		90FD509810997DC90051E460 /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				90FD509910997DC90051E460 /* Extensions */,
+				90FD50A010997DC90051E460 /* JSON */,
+				90FD50A710997DC90051E460 /* CDataScanner.h */,
+				90FD50A810997DC90051E460 /* CDataScanner.m */,
+			);
+			name = TouchJSON;
+			path = Source;
+			sourceTree = "<group>";
+		};
+		90FD509910997DC90051E460 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				90FD509A10997DC90051E460 /* NSCharacterSet_Extensions.h */,
+				90FD509B10997DC90051E460 /* NSCharacterSet_Extensions.m */,
+				90FD509C10997DC90051E460 /* CDataScanner_Extensions.h */,
+				90FD509D10997DC90051E460 /* CDataScanner_Extensions.m */,
+				90FD509E10997DC90051E460 /* NSDictionary_JSONExtensions.h */,
+				90FD509F10997DC90051E460 /* NSDictionary_JSONExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		90FD50A010997DC90051E460 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				90FD50A110997DC90051E460 /* CJSONScanner.h */,
+				90FD50A210997DC90051E460 /* CJSONScanner.m */,
+				90FD50A310997DC90051E460 /* CJSONSerializer.h */,
+				90FD50A410997DC90051E460 /* CJSONSerializer.m */,
+				90FD50A510997DC90051E460 /* CJSONDeserializer.h */,
+				90FD50A610997DC90051E460 /* CJSONDeserializer.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		93405B0D080D8BD100903735 /* StatusItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -1930,6 +1993,8 @@
 				072DE9B909A10DEB006516DD /* GrowlTCPPathway.m */,
 				31340CDA0D5B8E7100B9BEE0 /* GrowlPropertyListFilePathway.h */,
 				31340CDB0D5B8E7100B9BEE0 /* GrowlPropertyListFilePathway.m */,
+				90FD50151098044A0051E460 /* GrowlNotifyioPathway.h */,
+				90FD50161098044A0051E460 /* GrowlNotifyioPathway.m */,
 			);
 			name = Pathways;
 			sourceTree = "<group>";
@@ -3098,6 +3163,14 @@
 				93CD92BB0B5AF8CA000C39CD /* AWRippler.m in Sources */,
 				34422F720BF3ED2E001DA9ED /* GrowlApplication.m in Sources */,
 				31340CDD0D5B8E7100B9BEE0 /* GrowlPropertyListFilePathway.m in Sources */,
+				90FD50171098044A0051E460 /* GrowlNotifyioPathway.m in Sources */,
+				90FD50A910997DCA0051E460 /* NSCharacterSet_Extensions.m in Sources */,
+				90FD50AA10997DCA0051E460 /* CDataScanner_Extensions.m in Sources */,
+				90FD50AB10997DCA0051E460 /* NSDictionary_JSONExtensions.m in Sources */,
+				90FD50AC10997DCA0051E460 /* CJSONScanner.m in Sources */,
+				90FD50AD10997DCA0051E460 /* CJSONSerializer.m in Sources */,
+				90FD50AE10997DCA0051E460 /* CJSONDeserializer.m in Sources */,
+				90FD50AF10997DCA0051E460 /* CDataScanner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

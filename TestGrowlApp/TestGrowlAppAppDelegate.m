@@ -71,7 +71,8 @@
 	//[urlRequest setValue:@"notify-io-client" forHTTPHeaderField:@"user-agent"];
 	
 	notifyConn = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
-
+	NSLog(@"notifyConn: %@", notifyConn);
+	//[urlRequest release];
 }
 
 #pragma mark NSURLConnectionDelegate
