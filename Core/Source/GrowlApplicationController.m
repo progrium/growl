@@ -47,6 +47,8 @@
 #define UPDATE_AVAILABLE_NOTIFICATION	@"Growl update available"
 #define USER_WENT_IDLE_NOTIFICATION		@"User went idle"
 #define USER_RETURNED_NOTIFICATION		@"User returned"
+#define NOTIFYIO_MSG_RECEIVED           @"Notifyio message received"
+
 
 static OSStatus soundCompletionCallbackProc(SystemSoundActionID actionID, void *refcon);
 
@@ -1167,19 +1169,24 @@ static void checkVersion(CFRunLoopTimerRef timer, void *context) {
 		NSLocalizedString(@"A Growl update is available", nil), UPDATE_AVAILABLE_NOTIFICATION,
 		NSLocalizedString(@"You are now considered idle by Growl", nil), USER_WENT_IDLE_NOTIFICATION,
 		NSLocalizedString(@"You are no longer considered idle by Growl", nil), USER_RETURNED_NOTIFICATION,
+		NSLocalizedString(@"You have received a message from Notifyio", nil), NOTIFYIO_MSG_RECEIVED,
 		nil];
 
 	NSDictionary *humanReadableNames = [NSDictionary dictionaryWithObjectsAndKeys:
 		NSLocalizedString(@"Growl update available", nil), UPDATE_AVAILABLE_NOTIFICATION,
 		NSLocalizedString(@"User went idle", nil), USER_WENT_IDLE_NOTIFICATION,
 		NSLocalizedString(@"User returned", nil), USER_RETURNED_NOTIFICATION,
+		NSLocalizedString(@"Notifyio message received", nil), NOTIFYIO_MSG_RECEIVED,
 		nil];
 	
 	NSDictionary	*growlReg = [NSDictionary dictionaryWithObjectsAndKeys:
-		[NSArray arrayWithObjects:UPDATE_AVAILABLE_NOTIFICATION, USER_WENT_IDLE_NOTIFICATION, USER_RETURNED_NOTIFICATION, nil], GROWL_NOTIFICATIONS_ALL,
-		[NSArray arrayWithObject:UPDATE_AVAILABLE_NOTIFICATION], GROWL_NOTIFICATIONS_DEFAULT,
-		humanReadableNames, GROWL_NOTIFICATIONS_HUMAN_READABLE_NAMES,
-		descriptions, GROWL_NOTIFICATIONS_DESCRIPTIONS,
+		[NSArray arrayWithObjects:UPDATE_AVAILABLE_NOTIFICATION, USER_WENT_IDLE_NOTIFICATION, USER_RETURNED_NOTIFICATION, NOTIFYIO_MSG_RECEIVED, nil], GROWL_NOTIFICATIONS_ALL,
+		[NSArray arrayWithObjects:UPDATE_AVAILABLE_NOTIFICATION, NOTIFYIO_MSG_RECEIVED, nil], 
+			GROWL_NOTIFICATIONS_DEFAULT,
+		humanReadableNames, 
+			GROWL_NOTIFICATIONS_HUMAN_READABLE_NAMES,
+		descriptions, 
+			GROWL_NOTIFICATIONS_DESCRIPTIONS,
 		nil];
 	
 	return growlReg;

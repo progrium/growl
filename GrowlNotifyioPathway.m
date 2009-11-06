@@ -9,6 +9,7 @@
 #import "GrowlNotifyioPathway.h"
 #import "CJSONDeserializer.h"
 #import "GrowlDefines.h"
+#import "GrowlApplicationBridge.h"
 
 @interface GrowlNotifyioPathway (PRIVATE)
 - (void)initRemoteHost;
@@ -56,7 +57,6 @@
 	
 	
 	NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url];
-	//[urlRequest setValue:@"notify-io-client" forHTTPHeaderField:@"user-agent"];
 	
 	notifyConn = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
 	
@@ -86,41 +86,28 @@
 		NSLog(@"data: %@", jsonString);
 		
 		// Parse the json
-
 		NSData *jsonData = [jsonString dataUsingEncoding:NSUTF32BigEndianStringEncoding];
+		[jsonString release], jsonString = nil;
+		
 		NSError *error = nil;
 		NSDictionary *messageDict = [[CJSONDeserializer deserializer] deserializeAsDictionary:jsonData error:&error];
 		
 		
 		// Change the keys in this dict into ones growl understands 
-		self.messageData = [[NSMutableDictionary alloc] initWithCapacity:3];
+		self.messageData = [[[NSMutableDictionary alloc] initWithCapacity:3] autorelease];
 		
-		[messageData setObject:@"GrowlMenu" forKey:GROWL_APP_NAME];
+		[messageData setObject:@"Growl" forKey:GROWL_APP_NAME];
+		[messageData setObject:@"Notifyio message received" forKey:GROWL_NOTIFICATION_NAME];
 		
-		if ([messageDict objectForKey:@"title"]) {
-			[messageData setObject:[messageDict objectForKey:@"title"] forKey:GROWL_NOTIFICATION_TITLE];
-		}
-		if ([messageDict objectForKey:@"text"]) {
-			[messageData setObject:[messageDict objectForKey:@"text"] forKey:GROWL_NOTIFICATION_DESCRIPTION];
-		}
+		[messageData setObject:[messageDict objectForKey:@"title"] forKey:GROWL_NOTIFICATION_TITLE];
+		[messageData setObject:[messageDict objectForKey:@"text"] forKey:GROWL_NOTIFICATION_DESCRIPTION];
+
+		
 		
 		// TODO: handle sticky and link
 		
 		// Keep the data in case we need it to stick around because we won't be posting the growl notif
 		// until we get the icon
-			
-		//NSString *title             = [args objectForKey:KEY_TITLE];
-		//NSString *desc              = [args objectForKey:KEY_DESC];
-//		NSNumber *sticky            = [args objectForKey:KEY_STICKY];
-//		NSNumber *priority          = [args objectForKey:KEY_PRIORITY];
-//		NSString *imageUrl          = [args objectForKey:KEY_IMAGE_URL];
-//		NSString *iconOfFile        = [args objectForKey:KEY_ICON_FILE];
-//		NSString *iconOfApplication = [args objectForKey:KEY_ICON_APP_NAME];
-//		NSData   *imageData         = [args objectForKey:KEY_IMAGE];
-//		NSData   *pictureData       = [args objectForKey:KEY_PICTURE];
-//		NSString *appName           = [args objectForKey:KEY_APP_NAME];
-//		NSString *notifName         = [args objectForKey:KEY_NOTIFICATION_NAME];
-//		NSString *notifIdentifier   = [args objectForKey:KEY_NOTIFICATION_IDENTIFIER];
 		
 		
 		// Get the icon from the json data
@@ -128,15 +115,6 @@
 		if(!iconURLStr)
 		{
 			[self postNotificationWithDictionary:self.messageData];
-			//[GrowlApplicationBridge notifyWithTitle:[growlData objectForKey:@"title"] 
-//										description:[growlData objectForKey:@"text"] 
-//								   notificationName:@"name1" 
-//										   iconData:nil 
-//										   priority:1 
-//										   isSticky:[[growlData objectForKey:@"sticky"] isEqualToString:@"true"] 
-//									   clickContext:[growlData objectForKey:@"link"]];
-//			 
-			NSLog(@"would make a growl here without an icon");
 			self.messageData = nil;
 		}
 		else {
