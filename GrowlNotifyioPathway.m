@@ -70,14 +70,14 @@
 	[stringFromFileAtPath release];
 	
 	
+	// Timeout after 100 minutes.  It'll reconnect after that in connection:didFailWithError:
+	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:(60*100)]; 
 	
-	NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url];
 	
 	notifyConn = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
 	
 	NSLog(@"notifyConn: %@", notifyConn);
 	
-	// TODO: release urlRequest here?
 }
 
 
@@ -105,11 +105,16 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
 	NSLog(@"did fail with error: %@ on connection: %@", error, connection);
+	
+	// Try reconnecting.
+	[connection release], connection = nil;
+	[self initRemoteHost];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
 	NSLog(@"received response: %@ for connection %@", response, connection);
+	
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
