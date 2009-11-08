@@ -25,11 +25,32 @@
 	
 	[self initRemoteHost];
 	
-	
+	// Register for notifications about clicks so we can open links
+	[[NSDistributedNotificationCenter defaultCenter] addObserver:self 
+														selector:@selector(growlNotificationWasClicked:) 
+															name:@"GrowlGrowlClicked!" 
+														  object:nil];
+	 
 	
 	return [super setEnabled:flag];
 }
 
+- (void)growlNotificationWasClicked:(id)context
+{
+	NSLog(@"context! %@", context);
+	if(![context isKindOfClass:[NSNotification class]])
+	{
+		NSLog(@"the parameter isn't a NSNotification");
+		return;
+	}
+	
+	NSNotification *notification = (NSNotification *)context;
+	NSDictionary *userInfo = [notification userInfo];
+	NSString *urlString = [userInfo objectForKey:@"ClickedContext"];
+	
+	// open the url
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:urlString]];
+}
 
 
 - (void)initRemoteHost
@@ -101,7 +122,7 @@
 		
 		[messageData setObject:[messageDict objectForKey:@"title"] forKey:GROWL_NOTIFICATION_TITLE];
 		[messageData setObject:[messageDict objectForKey:@"text"] forKey:GROWL_NOTIFICATION_DESCRIPTION];
-
+		[messageData setObject:[messageDict objectForKey:@"link"] forKey:GROWL_NOTIFICATION_CLICK_CONTEXT];
 		
 		
 		// TODO: handle sticky and link
