@@ -20,6 +20,15 @@
 
 @synthesize messageData;
 
+- (void) dealloc
+{
+	[notifyConn release], notifyConn = nil;
+	[iconConn release], iconConn = nil;
+	[messageData release], messageData = nil;
+	
+	[super dealloc];
+}
+
 - (BOOL) setEnabled:(BOOL)flag {
 	NSLog(@"GrowlNotifyioPathway>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 	
@@ -35,22 +44,7 @@
 	return [super setEnabled:flag];
 }
 
-- (void)growlNotificationWasClicked:(id)context
-{
-	NSLog(@"context! %@", context);
-	if(![context isKindOfClass:[NSNotification class]])
-	{
-		NSLog(@"the parameter isn't a NSNotification");
-		return;
-	}
-	
-	NSNotification *notification = (NSNotification *)context;
-	NSDictionary *userInfo = [notification userInfo];
-	NSString *urlString = [userInfo objectForKey:@"ClickedContext"];
-	
-	// open the url
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:urlString]];
-}
+
 
 
 - (void)initRemoteHost
@@ -82,19 +76,40 @@
 	notifyConn = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
 	
 	NSLog(@"notifyConn: %@", notifyConn);
+	
+	// TODO: release urlRequest here?
 }
 
+
+#pragma mark NSDistributedNotificationCenter callback method
+
+- (void)growlNotificationWasClicked:(id)context
+{
+	NSLog(@"context! %@", context);
+	if(![context isKindOfClass:[NSNotification class]])
+	{
+		NSLog(@"the parameter isn't a NSNotification");
+		return;
+	}
+	
+	NSNotification *notification = (NSNotification *)context;
+	NSDictionary *userInfo = [notification userInfo];
+	NSString *urlString = [userInfo objectForKey:@"ClickedContext"];
+	
+	// open the url
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:urlString]];
+}
 
 #pragma mark NSURLConnectionDelegate
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-	NSLog(@"did fail with error: %@", error);
+	NSLog(@"did fail with error: %@ on connection: %@", error, connection);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-	NSLog(@"received");
+	NSLog(@"received response: %@ for connection %@", response, connection);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -115,14 +130,18 @@
 		
 		
 		// Change the keys in this dict into ones growl understands 
-		self.messageData = [[[NSMutableDictionary alloc] initWithCapacity:3] autorelease];
+		self.messageData = [[NSMutableDictionary alloc] initWithCapacity:3];
 		
 		[messageData setObject:@"Growl" forKey:GROWL_APP_NAME];
 		[messageData setObject:@"Notifyio message received" forKey:GROWL_NOTIFICATION_NAME];
 		
-		[messageData setObject:[messageDict objectForKey:@"title"] forKey:GROWL_NOTIFICATION_TITLE];
-		[messageData setObject:[messageDict objectForKey:@"text"] forKey:GROWL_NOTIFICATION_DESCRIPTION];
-		[messageData setObject:[messageDict objectForKey:@"link"] forKey:GROWL_NOTIFICATION_CLICK_CONTEXT];
+		id piece;
+		if(piece = [messageDict objectForKey:@"title"])
+			[messageData setObject:piece forKey:GROWL_NOTIFICATION_TITLE];
+		if(piece = [messageDict objectForKey:@"text"])
+			[messageData setObject:piece forKey:GROWL_NOTIFICATION_DESCRIPTION];
+		if(piece = [messageDict objectForKey:@"link"])
+			[messageData setObject:piece forKey:GROWL_NOTIFICATION_CLICK_CONTEXT];
 		
 		
 		// TODO: handle sticky and link
@@ -132,7 +151,7 @@
 		
 		
 		// Get the icon from the json data
-		NSString *iconURLStr = [self.messageData objectForKey:@"icon"];
+		NSString *iconURLStr = [messageDict objectForKey:@"icon"];
 		if(!iconURLStr)
 		{
 			[self postNotificationWithDictionary:self.messageData];
@@ -154,19 +173,17 @@
 		// Make an image out of the received data
 		NSImage *image = [[NSImage alloc] initWithData:data];
 		
+		
+		
+		// add the image data to the dictionary we're going to pass
+		//[messageData setObject:[image TIFFRepresentation] forKey:GROWL_NOTIFICATION_ICON];
+		[messageData setObject:image forKey:GROWL_NOTIFICATION_ICON];
+		
 		[self postNotificationWithDictionary:self.messageData];
-		//
-//		[GrowlApplicationBridge notifyWithTitle:[growlData objectForKey:@"title"] 
-//									description:[growlData objectForKey:@"text"] 
-//							   notificationName:@"name1" 
-//									   iconData:[image TIFFRepresentation]
-//									   priority:1 
-//									   isSticky:[[growlData objectForKey:@"sticky"] isEqualToString:@"true"]
-//								   clickContext:[growlData objectForKey:@"link"]];
-//		
-		NSLog(@"would make a growl here with an icon");
-		[iconConn release];
-		iconConn = nil;	
+
+		//TODO: release image here?
+		
+		[iconConn release], iconConn = nil;	
 		
 		self.messageData = nil;
 	}
